@@ -1,0 +1,887 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  #ContactForm-{{ section.id }} .contact-from__errors-container,
+  #ContactForm-{{ section.id }} .contact__field-error {
+    --color-foreground: {{ section.settings.errors_text_color.red }}, {{ section.settings.errors_text_color.green }}, {{ section.settings.errors_text_color.blue }};
+    color: rgb(var(--color-foreground));
+  }
+  #ContactForm-{{ section.id }} .contact-from__success-container {
+    --color-foreground: {{ section.settings.success_text_color.red }}, {{ section.settings.success_text_color.green }}, {{ section.settings.success_text_color.blue }};
+    color: rgb(var(--color-foreground));
+  }
+
+  .color-scheme-{{ section.id }}.color-custom {
+    --color-background: {{ section.settings.custom_colors_background.red }}, {{ section.settings.custom_colors_background.green }}, {{ section.settings.custom_colors_background.blue }};
+    --gradient-background: {% if section.settings.custom_gradient_background != blank %}{{ section.settings.custom_gradient_background }}{% else %}{{ section.settings.custom_colors_background }}{% endif %};
+    {% if section.settings.custom_image_background != blank %}
+      {% # theme-check-disable %}
+      --gradient-background: url('{{ section.settings.custom_image_background | img_url: 'master' }}') center center / cover no-repeat;
+      {% # theme-check-enable %}
+    {% endif %}
+    --color-foreground: {{ section.settings.custom_colors_text.red }}, {{ section.settings.custom_colors_text.green }}, {{ section.settings.custom_colors_text.blue }};
+    --color-button: {{ section.settings.custom_colors_solid_button_background.red }}, {{ section.settings.custom_colors_solid_button_background.green }}, {{ section.settings.custom_colors_solid_button_background.blue }};
+    --color-button-text: {{ section.settings.custom_colors_solid_button_text.red }}, {{ section.settings.custom_colors_solid_button_text.green }}, {{ section.settings.custom_colors_solid_button_text.blue }};
+  }
+  {% if section.settings.custom_mobile_image_background != blank %}
+    @media screen and (max-width: 740px) {
+      .color-scheme-{{ section.id }}.color-custom {
+        {% # theme-check-disable %}
+        --gradient-background: url('{{ section.settings.custom_mobile_image_background | img_url: 'master' }}') center center / cover no-repeat;
+        {% # theme-check-enable %}
+      }
+    }
+  {% endif %}
+{%- endstyle -%}
+
+<div class="color-scheme-{{ section.id }} color-{{ section.settings.color_scheme }} gradient content-for-grouping animate-section animate--hidden {{ section.settings.visibility }}">
+  {% if section.settings.display_id %}
+    <copy-button class='section-id-btn button' data-content="#shopify-section-{{ section.id }}" data-success="false">
+      <span class="copy-text">Click to copy section ID</span>
+      <span class="copy-success">ID copied successfully!</span>
+    </copy-button>
+  {% endif %}
+  <contact-form class="contact page-width page-width--narrow section-{{ section.id }}-padding display-block" id="ContactForm-{{ section.id }}">
+    {%- if section.settings.title != blank -%}
+      <h2 class="title title-wrapper--no-top-margin {{ section.settings.heading_size }} title-with-highlight animate-item animate-item--child index-0" style='--hightlight-color:{{ section.settings.title_highlight_color }}'>
+        {{ section.settings.title }}
+      </h2>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+    {%- endif -%}
+    {% form 'contact', id: 'ContactForm', class: 'isolate animate-item animate-item--child index-1' %}
+      {%- if form.posted_successfully? -%}
+        <div
+          class='contact-from__message-container contact-from__success-container flex flex-align-center custom-border-hex custom-border-radius custom-bg'
+          style="--bg-color: {{ section.settings.success_bg_color }};--border-radius: {{ section.settings.success_border_radius }}px;--border-color: {{ section.settings.success_border_color }};--border-thickness:{{ section.settings.success_border_width }}px;"
+        >
+          {% if section.settings.success_custom_icon != blank %}
+            <img
+              src="{{ section.settings.success_custom_icon | image_url }}"
+              {% if section.settings.success_custom_icon.alt != blank %}
+                alt="{{ section.settings.success_custom_icon.alt }}"
+              {% endif %}
+              width="auto"
+              height="auto"
+              loading="lazy"
+            >
+          {% elsif section.settings.success_icon != blank %}
+            {% render 'material-icon', icon: section.settings.success_icon, filled: section.settings.success_icon_filled %}
+          {% endif %}
+          <div class="contact-from__message__content">
+            <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+              {{ 'templates.contact.form.post_success' | t }}
+            </h2>
+          </div>
+        </div>
+      {%- elsif form.errors -%}
+        <div
+          class='contact-from__message-container contact-from__errors-container flex flex-align-center custom-border-hex custom-border-radius custom-bg'
+          style="--bg-color: {{ section.settings.errors_bg_color }};--border-radius: {{ section.settings.errors_border_radius }}px;--border-color: {{ section.settings.errors_border_color }};--border-thickness:{{ section.settings.errors_border_width }}px;"
+        >
+          {% if section.settings.errors_custom_icon != blank %}
+            <img
+              src="{{ section.settings.errors_custom_icon | image_url }}"
+              {% if section.settings.errors_custom_icon.alt != blank %}
+                alt="{{ section.settings.errors_custom_icon.alt }}"
+              {% endif %}
+              width="auto"
+              height="auto"
+              loading="lazy"
+            >
+          {% elsif section.settings.errors_icon != blank %}
+            {% render 'material-icon', icon: section.settings.errors_icon, filled: section.settings.errors_icon_filled %}
+          {% endif %}
+          <div class="contact-from__message__content">
+            <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+              {{ 'templates.contact.form.error_heading' | t }}
+            </h2>
+            <ul class="caption-large" role="list">
+              <li>
+                {{ form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {% if section.blocks.size > 0 %}
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {% when 'field_row' %}
+              {% if block.settings.input_1_enabled and block.settings.input_2_enabled %}
+                <div class="contact__fields">
+              {% endif %}
+              
+              {%- if block.settings.input_1_enabled -%}
+                {% liquid
+                  case block.settings.input_1_type
+                    when 'name'
+                      assign field_1_name = 'templates.contact.form.name' | t
+                    when 'email'
+                      assign field_1_name = 'templates.contact.form.email' | t
+                    when 'phone'
+                      assign field_1_name = 'templates.contact.form.phone' | t
+                    else
+                      assign field_1_name = block.settings.input_1_custom_name | escape
+                  endcase
+                  assign required = false
+                  if block.settings.input_1_required or block.settings.input_1_type == 'email'
+                    assign required = true
+                  endif
+                %}
+                <div class="field-wrapper" data-required="{{ required }}">
+                  <div class="field">
+                    <input
+                      class="field__input"
+                      type="{% if block.settings.input_1_type == 'email' %}email{% elsif block.settings.input_1_type == 'phone' %}tel{% else %}text{% endif %}"
+                      id="ContactForm-{{ block.id }}-input1"
+                      {% if block.settings.input_1_type == 'email' %}
+                        name="contact[email]"
+                      {% else %}
+                        name="contact[{{ field_1_name }}]"
+                      {% endif %}
+                      {% if block.settings.input_1_type == 'email' %}
+                        autocomplete="email"
+                        autocapitalize="off"
+                        spellcheck="false"
+                      {% elsif block.settings.input_1_type == 'phone' %}
+                        autocomplete="tel"
+                        pattern="[0-9\-]*"
+                      {% elsif block.settings.input_1_type == 'name' %}
+                        autocomplete="name"
+                      {% endif %}
+                      {% if required %} aria-required="true"{% endif %}
+                      placeholder="{{ field_1_name }}"
+                      {%- if form.errors contains 'email' and block.settings.input_1_type == 'email' -%}
+                        aria-invalid="true"
+                        aria-describedby="ContactForm-email1-{{ block.id }}-error"
+                      {% endif %}
+                    >
+                    <label class="field__label" for="ContactForm-{{ block.id }}-input1">{{ field_1_name }}</label>
+                  </div>
+                  <small class="contact__field-error field-wrapper__error-msg hidden">
+                    <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                    <span class="form__message">
+                      {{ block.settings.input_1_error_message }}
+                    </span>
+                  </small>
+                </div>
+              {%- endif -%}
+              
+              {%- if block.settings.input_2_enabled -%}
+                {% liquid
+                  case block.settings.input_2_type
+                    when 'name'
+                      assign field_2_name = 'templates.contact.form.name' | t
+                    when 'email'
+                      assign field_2_name = 'templates.contact.form.email' | t
+                    when 'phone'
+                      assign field_2_name = 'templates.contact.form.phone' | t
+                    else
+                      assign field_2_name = block.settings.input_2_custom_name | escape
+                  endcase
+                  assign required = false
+                  if block.settings.input_2_required or block.settings.input_2_type == 'email'
+                    assign required = true
+                  endif
+                %}
+                <div class="field-wrapper" data-required="{{ required }}">
+                  <div class="field">
+                    <input
+                      class="field__input"
+                      type="{% if block.settings.input_2_type == 'email' %}email{% elsif block.settings.input_2_type == 'phone' %}tel{% else %}text{% endif %}"
+                      id="ContactForm-{{ block.id }}-input2"
+                      {% if block.settings.input_2_type == 'email' %}
+                        name="contact[email]"
+                      {% else %}
+                        name="contact[{{ field_2_name }}]"
+                      {% endif %}
+                      {% if block.settings.input_2_type == 'email' %}
+                        autocomplete="email"
+                        autocapitalize="off"
+                        spellcheck="false"
+                      {% elsif block.settings.input_2_type == 'phone' %}
+                        autocomplete="tel"
+                        pattern="[0-9\-]*"
+                      {% elsif block.settings.input_2_type == 'name' %}
+                        autocomplete="name"
+                      {% endif %}
+                      {% if required %} aria-required="true"{% endif %}
+                      placeholder="{{ field_2_name }}"
+                      {%- if form.errors contains 'email' and block.settings.input_2_type == 'email' -%}
+                        aria-invalid="true"
+                        aria-describedby="ContactForm-email2-{{ block.id }}-error"
+                      {% endif %}
+                    >
+                    <label class="field__label" for="ContactForm-{{ block.id }}-input2">{{ field_2_name }}</label>
+                  </div>
+                  <small class="contact__field-error field-wrapper__error-msg hidden">
+                    <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                    <span class="form__message">
+                      {{ block.settings.input_2_error_message }}
+                    </span>
+                  </small>
+                </div>
+              {%- endif -%}
+              {% if block.settings.input_1_enabled and block.settings.input_2_enabled %}
+                </div>
+              {% endif %}
+            
+            {% when 'textarea' %}
+              <div class="field-wrapper"{% if block.settings.input_2_required %} data-required="true"{% endif %}>
+                <div class="field">
+                  {% liquid
+                    if block.settings.input_type == 'comment'
+                      assign textarea_name = 'templates.contact.form.comment' | t
+                    else
+                      assign textarea_name = block.settings.input_custom_name | escape
+                    endif
+                  %}
+                  <textarea
+                    rows="10"
+                    id="ContactForm-{{ block.id }}-textarea"
+                    class="text-area field__input"
+                    name="contact[{{ textarea_name }}]"
+                    {% if block.settings.input_required %} aria-required="true"{% endif %}
+                    placeholder="{{ textarea_name }}"
+                    {% if block.settings.max_characters != blank %}
+                      maxlength="{{ block.settings.max_characters }}"
+                    {% endif %}
+                  >{% if block.settings.input_type == 'comment' %}{{ form.body }}{% endif %}</textarea>
+                  <label class="form__label field__label" for="ContactForm-{{ block.id }}-textarea">
+                    {{ textarea_name }}
+                  </label>
+                </div>
+                <small class="contact__field-error field-wrapper__error-msg hidden">
+                  <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                  <span class="form__message">
+                    {{ block.settings.input_error_message }}
+                  </span>
+                </small>
+              </div>
+          {% endcase %}
+        {%- endfor -%}
+      {% else %}
+        <div class="contact__fields">
+          <div class="field-wrapper">
+            <div class="field">
+              <input
+                class="field__input"
+                autocomplete="name"
+                type="text"
+                id="ContactForm-name"
+                name="contact[{{ 'templates.contact.form.name' | t }}]"
+                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                placeholder="{{ 'templates.contact.form.name' | t }}"
+              >
+              <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+            </div>
+          </div>
+          <div class="field-wrapper">
+            <div class="field">
+              <input
+                autocomplete="email"
+                type="email"
+                id="ContactForm-email"
+                class="field__input"
+                name="contact[email]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'email' %}
+                  aria-invalid="true"
+                  aria-describedby="ContactForm-email-error"
+                {% endif %}
+                placeholder="{{ 'templates.contact.form.email' | t }}"
+              >
+              <label class="field__label" for="ContactForm-email">
+                {{- 'templates.contact.form.email' | t }}
+                <span aria-hidden="true">*</span></label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="field-wrapper">
+          <div class="field">
+            <input
+              type="tel"
+              id="ContactForm-phone"
+              class="field__input"
+              autocomplete="tel"
+              name="contact[{{ 'templates.contact.form.phone' | t }}]"
+              pattern="[0-9\-]*"
+              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.phone' | t }}"
+            >
+            <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+          </div>
+        </div>
+        <div class="field-wrapper">
+          <div class="field">
+            <textarea
+              rows="10"
+              id="ContactForm-body"
+              class="text-area field__input"
+              name="contact[{{ 'templates.contact.form.comment' | t }}]"
+              placeholder="{{ 'templates.contact.form.comment' | t }}"
+            >
+              {{- form.body -}}
+            </textarea>
+            <label class="form__label field__label" for="ContactForm-body">
+              {{- 'templates.contact.form.comment' | t -}}
+            </label>
+          </div>
+        </div>
+      {% endif %}
+      
+      <div class="contact__button">
+        <button type="submit" class="button{% if section.settings.button_full_width %} button--full-width{% endif %}">
+          {{ 'templates.contact.form.send' | t }}
+        </button>
+      </div>
+    {%- endform -%}
+  </contact-form>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+          "type": "header",
+          "content": "LICENSE pour PULSOR AGENCY",
+          "info": "Thème 1.2.2 pro"
+        },
+    {
+      "type": "paragraph",
+      "content": "NOTE: Merci de report tout bug"
+      },
+    {
+      "type": "checkbox",
+      "id": "display_id",
+      "label": "Display section ID",
+      "info": "ID is used in the Sections group section to merge 2 sections. ID can also be put inside any button link and the button will scroll to this section.",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "options": [
+        {
+          "value": "desktop-hidden",
+          "label": "Mobile only"
+        },
+        {
+          "value": "mobile-hidden",
+          "label": "Desktop only"
+        },
+        {
+          "value": "always-display",
+          "label": "All devices"
+        }
+      ],
+      "label": "Display on",
+      "default": "always-display"
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Contact form",
+      "label": "Heading",
+      "info": "Bold certain words to highlight them with a different color."
+    },
+    {
+      "type": "color",
+      "id": "title_highlight_color",
+      "label": "Heading highlight color",
+      "default": "#6D388B"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width",
+      "label": "Use full width button style",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "background-1",
+      "label": "Color scheme",
+      "info": "Custom color scheme is edited at the bottom of section settings."
+    },
+    {
+      "type": "header",
+      "content": "Form content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Use section blocks to create customized form inputs. If the section doesn't have any blocks added, the default layout will be displayed."
+    },
+    {
+      "type": "header",
+      "content": "Success message"
+    },
+    {
+      "type": "text",
+      "id": "success_icon",
+      "default": "check_circle",
+      "label": "Icon",
+      "info": "[View all available icons](https:\/\/fonts.google.com\/icons?icon.set=Material+Symbols&icon.platform=web)."
+    },
+    {
+      "type": "checkbox",
+      "id": "success_icon_filled",
+      "default": false,
+      "label": "Filled icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "success_custom_icon",
+      "label": "Custom icon"
+    },
+    {
+      "type": "color",
+      "id": "success_text_color",
+      "default": "#28C100",
+      "label": "Text & icon color"
+    },
+    {
+      "type": "color",
+      "id": "success_bg_color",
+      "label": "Background color",
+      "default": "#F2FFED"
+    },
+    {
+      "type": "range",
+      "id": "success_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Corner radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "success_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Border thickness",
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "success_border_color",
+      "label": "Border color",
+      "default": "#28C100"
+    },
+    {
+      "type": "header",
+      "content": "Error messages"
+    },
+    {
+      "type": "text",
+      "id": "errors_icon",
+      "default": "error",
+      "label": "Icon",
+      "info": "[View all available icons](https:\/\/fonts.google.com\/icons?icon.set=Material+Symbols&icon.platform=web)."
+    },
+    {
+      "type": "checkbox",
+      "id": "errors_icon_filled",
+      "default": false,
+      "label": "Filled icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "errors_custom_icon",
+      "label": "Custom icon"
+    },
+    {
+      "type": "color",
+      "id": "errors_text_color",
+      "default": "#FF0000",
+      "label": "Text & icon color"
+    },
+    {
+      "type": "color",
+      "id": "errors_bg_color",
+      "label": "Background color",
+      "default": "#fff5f5"
+    },
+    {
+      "type": "range",
+      "id": "errors_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Corner radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "errors_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Border thickness",
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "errors_border_color",
+      "label": "Border color",
+      "default": "#FF0000"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Custom color scheme",
+      "info": "Applied if Color scheme setting is set to Custom."
+    },
+    {
+      "type": "color",
+      "id": "custom_colors_background",
+      "default": "#FFFFFF",
+      "label": "Background color"
+    },
+    {
+      "type": "color_background",
+      "id": "custom_gradient_background",
+      "label": "Gradient background",
+      "info": "If added, replaces Background color when applicable."
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image_background",
+      "label": "Image background"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_mobile_image_background",
+      "label": "Mobile image background",
+      "info": "If empty, the Image background will also be applied to mobile devices"
+    },
+    {
+      "type": "color",
+      "id": "custom_colors_text",
+      "default": "#2E2A39",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "custom_colors_solid_button_background",
+      "default": "#dd1d1d",
+      "label": "Solid button background"
+    },
+    {
+      "type": "color",
+      "id": "custom_colors_solid_button_text",
+      "default": "#ffffff",
+      "label": "Solid button label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "field_row",
+      "name": "Input row",
+      "settings": [
+        {
+          "type": "header",
+          "content": "LICENSE pour PULSOR AGENCY",
+          "info": "Thème 1.2.2 pro"
+        },
+    {
+      "type": "paragraph",
+      "content": "NOTE: Merci de report tout bug"
+      },
+    {
+          "type": "header",
+          "content": "Input #1"
+        },
+        {
+          "type": "checkbox",
+          "id": "input_1_enabled",
+          "label": "Input #1 Enabled",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "input_1_type",
+          "label": "Input #1 Type",
+          "options": [
+            {
+              "value": "name",
+              "label": "Name"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            },
+            {
+              "value": "phone",
+              "label": "Phone number"
+            },
+            {
+              "value": "custom",
+              "label": "Custom"
+            }
+          ],
+          "default": "custom"
+        },
+        {
+          "type": "checkbox",
+          "id": "input_1_required",
+          "label": "Input #1 Required",
+          "default": false,
+          "info": "Automatically enabled if type is set to email."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "input_1_error_message",
+          "label": "Input #1 Error message",
+          "default": "This field is required",
+          "info": "Displayed if the send button is clicked, but a required input is not filled."
+        },
+        {
+          "type": "text",
+          "id": "input_1_custom_name",
+          "label": "Input #1 Custom name",
+          "default": "Custom input name"
+        },
+        {
+          "type": "header",
+          "content": "Input #2"
+        },
+        {
+          "type": "checkbox",
+          "id": "input_2_enabled",
+          "label": "Input #2 Enabled",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "input_2_type",
+          "label": "Input #2 Type",
+          "options": [
+            {
+              "value": "name",
+              "label": "Name"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            },
+            {
+              "value": "phone",
+              "label": "Phone number"
+            },
+            {
+              "value": "custom",
+              "label": "Custom"
+            }
+          ],
+          "default": "custom"
+        },
+        {
+          "type": "checkbox",
+          "id": "input_2_required",
+          "label": "Input #2 Required",
+          "default": false,
+          "info": "Automatically enabled if type is set to email."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "input_2_error_message",
+          "label": "Input #2 Error message",
+          "default": "This field is required",
+          "info": "Displayed if the send button is clicked, but a required input is not filled."
+        },
+        {
+          "type": "text",
+          "id": "input_2_custom_name",
+          "label": "Input #2 Custom name",
+          "default": "Custom input name"
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "name": "Text box",
+      "settings": [
+        {
+          "type": "header",
+          "content": "LICENSE pour PULSOR AGENCY",
+          "info": "Thème 1.2.2 pro"
+        },
+    {
+      "type": "paragraph",
+      "content": "NOTE: Merci de report tout bug"
+      },
+    {
+          "type": "select",
+          "id": "input_type",
+          "label": "Input type",
+          "options": [
+            {
+              "value": "comment",
+              "label": "Comment"
+            },
+            {
+              "value": "custom",
+              "label": "Custom"
+            }
+          ],
+          "default": "custom"
+        },
+        {
+          "type": "number",
+          "id": "max_characters",
+          "label": "Maximum characters"
+        },
+        {
+          "type": "checkbox",
+          "id": "input_required",
+          "label": "Input required",
+          "default": false
+        },
+        {
+          "type": "inline_richtext",
+          "id": "input_error_message",
+          "label": "Input Error message",
+          "default": "This field is required",
+          "info": "Displayed if the send button is clicked, but a required input is not filled."
+        },
+        {
+          "type": "text",
+          "id": "input_custom_name",
+          "label": "Input custom name",
+          "default": "Custom name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.name",
+      "blocks": [
+        {
+          "type": "field_row",
+          "settings": {
+            "input_1_type": "name",
+            "input_2_enabled": true,
+            "input_2_type": "email"
+          }
+        },
+        {
+          "type": "field_row",
+          "settings": {
+            "input_1_type": "phone"
+          }
+        },
+        {
+          "type": "textarea",
+          "settings": {
+            "input_type": "comment"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,256 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{% comment %}
+    Renders a product thumbnail with a modal-opener
+
+    Accepts:
+    - media: {Object} Product Media object
+    - media_count: {Number} Number of media objects
+    - position: {String} Position of the media. Used for accessible label.
+    - desktop_layout: {String} Layout of the media for desktop.
+    - mobile_layout: {String} Layout of the media for mobile.
+    - loop: {Boolean} Enable video looping (optional)
+    - modal_id: {String} The product modal that will be shown by clicking the thumbnail
+    - xr_button: {Boolean} Renders the "View in your space" button (shopify-xr-button) if the media is a 3D Model
+    - constrain_to_viewport: {Boolean} Force media height to fit within viewport
+    - media_fit: {String} Method ("contain" or "cover") to fit image into container
+    - media_width: {Float} The width percentage that the media column occupies on desktop.
+    - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+
+    Usage:
+    {% render 'product-thumbnail',
+      media: media,
+      position: forloop.index,
+      loop: section.settings.enable_video_looping,
+      modal_id: section.id
+    %}
+{% endcomment %}
+
+{%- liquid
+  unless lazy_load == false
+    assign lazy = 'lazy'
+  endunless
+
+  assign desktop_columns = 1
+  if desktop_layout == 'columns' and media_count > 1
+    assign desktop_columns = 2
+  endif
+
+  assign mobile_columns = 1
+  if mobile_layout == 'columns' and media_count > 1
+    assign mobile_columns = 2
+  endif
+
+  if media.media_type == 'image'
+    assign image_class = 'image-magnify-' | append: section.settings.image_zoom
+  endif
+
+  assign has_modal = false
+  assign has_video_modal = false
+  assign is_no_modal_video = false
+  assign media_type = media.media_type
+  if media.media_type != 'image'
+    if media.media_type == 'video' and section.settings.video_player == 'modal'
+      assign has_modal = true
+      assign has_video_modal = true
+    elsif media.media_type != 'video'
+      assign has_modal = true
+    endif
+    if media.media_type == 'video' and section.settings.video_player != 'modal'
+      assign media_type = 'image'
+      assign is_no_modal_video = true
+    endif
+  endif
+-%}
+
+{%- capture sizes -%}
+  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | divided_by: desktop_columns | round }}px, (min-width: 990px) calc({{ media_width | times: 100 | divided_by: desktop_columns }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw / {{ mobile_columns }} - 4rem)
+{%- endcapture -%}
+
+<div
+  class="product-media-container media-type-{{ media.media_type }} media-fit-{{ media_fit }} global-media-settings gradient{% if constrain_to_viewport %} constrain-height{% endif %}"
+  style="--ratio: {{ media.aspect_ratio | default: 1.0 }}; --preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};"
+>
+  {% if section.settings.trust_badge != blank %}
+    <div class='product-media__trust-badge product-media__trust-badge--{{ section.settings.trust_badge_position }} product-media__trust-badge--{{ section.settings.trust_badge_size }}'>
+      <img
+        src="{{ section.settings.trust_badge | image_url }}"
+        alt="{{ section.settings.trust_badge.alt | escape }}"
+        loading="lazy"
+        width="auto"
+        height="auto"
+      >
+    </div>
+  {% endif %}
+  <noscript>
+    {%- if has_video_modal or media.media_type == 'external_video' -%}
+      <span class="product__media-icon motion-reduce quick-add-hidden">{% render 'icon-play' %}</span>
+      <div class="product__media media">
+        {{ media.preview_image | image_url: width: 1946 | image_tag:
+          loading: lazy,
+          sizes: sizes,
+          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+        }}
+      </div>
+      <a href="{% if media.media_type == 'video' %}{{ media.sources[1].url }}{% else %}{{ media | external_video_url }}{% endif %}" class="product__media-toggle">
+        <span class="visually-hidden">{{ 'products.product.video_exit_message' | t: title: product.title | escape }}</span>
+      </a>
+    {%- else -%}
+      <div class="product__media media">
+        {{ media.preview_image | image_url: width: 1946 | image_tag:
+          loading: lazy,
+          sizes: sizes,
+          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+        }}
+      </div>
+    {%- endif -%}
+  </noscript>
+
+  <modal-opener class="product__modal-opener product__modal-opener--{{ media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+    <span class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}{% if is_no_modal_video %} hidden{% endif %}" aria-hidden="true">
+      {%- liquid
+        case media.media_type
+        when 'video' or 'external_video'
+          if has_video_modal
+            render 'icon-play'
+          endif
+        when 'model'
+          render 'icon-3d-model'
+        else
+          render 'icon-zoom'
+        endcase
+      -%}
+    </span>
+    <div class="product__media media media--transparent">
+      {% if media.media_type == 'video' and section.settings.video_player != 'modal' %}
+        {% liquid
+          assign is_autoplay = false
+          if section.settings.video_player == 'autoplay' 
+            assign is_autoplay = true
+          endif
+          assign no_play_button = false
+          if section.setttings.autoplay_videos_pause_btn == false and is_autoplay
+            assign no_play_button = true
+          endif
+        %}
+        <internal-video
+          class="internal-video{% if is_autoplay %} internal-video--playing internal-video--muted{% endif %}"
+          data-autoplay="{{ is_autoplay }}"
+          data-no-play-btn="{{ no_play_button }}"
+        >
+          <video
+            width="100%"
+            height="auto"
+            preload="metadata"
+            poster="{{ media.preview_image | image_url }}"
+            {% if is_autoplay or section.settings.enable_video_looping %}
+              loop
+            {% endif %}
+            {% if is_autoplay %}
+              muted
+            {% endif %}
+            playsinline
+            disablepictureinpicture
+          >
+            {% for source in media.sources %}
+              <source
+                {% if is_autoplay %}data-{% endif -%}src="{{ source.url }}"
+                type="{{ source.mime_type }}"
+              >
+            {% endfor %}
+          </video>
+          <button class="internal-video__play"{% if no_play_button %} style='visibility: hidden;'{% endif %}>
+            <div class="play-button color-{{ section.settings.play_btn_color_scheme }}">
+              {%- render 'icon-play' -%}
+            </div>
+          </button>
+          {% if section.settings.video_timeline %}
+            <div class="internal-video__timeline accent-color-{{ section.settings.timeline_color }}">&nbsp</div>
+          {% endif %}
+          {% if section.settings.video_sound_btn %}
+            <button class="internal-video__sound-btn flex-center color-{{ section.settings.sound_btn_color_scheme }}">
+              <svg fill="currentColor" height="12" role="img" viewBox="0 0 48 48" width="12">
+                <path clip-rule="evenodd" d="M1.5 13.3c-.8 0-1.5.7-1.5 1.5v18.4c0 .8.7 1.5 1.5 1.5h8.7l12.9 12.9c.9.9 2.5.3 2.5-1v-9.8c0-.4-.2-.8-.4-1.1l-22-22c-.3-.3-.7-.4-1.1-.4h-.6zm46.8 31.4-5.5-5.5C44.9 36.6 48 31.4 48 24c0-11.4-7.2-17.4-7.2-17.4-.6-.6-1.6-.6-2.2 0L37.2 8c-.6.6-.6 1.6 0 2.2 0 0 5.7 5 5.7 13.8 0 5.4-2.1 9.3-3.8 11.6L35.5 32c1.1-1.7 2.3-4.4 2.3-8 0-6.8-4.1-10.3-4.1-10.3-.6-.6-1.6-.6-2.2 0l-1.4 1.4c-.6.6-.6 1.6 0 2.2 0 0 2.6 2 2.6 6.7 0 1.8-.4 3.2-.9 4.3L25.5 22V1.4c0-1.3-1.6-1.9-2.5-1L13.5 10 3.3-.3c-.6-.6-1.5-.6-2.1 0L-.2 1.1c-.6.6-.6 1.5 0 2.1L4 7.6l26.8 26.8 13.9 13.9c.6.6 1.5.6 2.1 0l1.4-1.4c.7-.6.7-1.6.1-2.2z" fill-rule="evenodd"></path>
+              </svg>
+              <svg fill="currentColor" height="12" role="img" viewBox="0 0 24 24" width="12">
+                <path d="M16.636 7.028a1.5 1.5 0 1 0-2.395 1.807 5.365 5.365 0 0 1 1.103 3.17 5.378 5.378 0 0 1-1.105 3.176 1.5 1.5 0 1 0 2.395 1.806 8.396 8.396 0 0 0 1.71-4.981 8.39 8.39 0 0 0-1.708-4.978Zm3.73-2.332A1.5 1.5 0 1 0 18.04 6.59 8.823 8.823 0 0 1 20 12.007a8.798 8.798 0 0 1-1.96 5.415 1.5 1.5 0 0 0 2.326 1.894 11.672 11.672 0 0 0 2.635-7.31 11.682 11.682 0 0 0-2.635-7.31Zm-8.963-3.613a1.001 1.001 0 0 0-1.082.187L5.265 6H2a1 1 0 0 0-1 1v10.003a1 1 0 0 0 1 1h3.265l5.01 4.682.02.021a1 1 0 0 0 1.704-.814L12.005 2a1 1 0 0 0-.602-.917Z"></path>
+              </svg>
+            </button>
+          {% endif %}
+        </internal-video>
+      {% else %}
+        {{ media.preview_image | image_url: width: 1946 | image_tag:
+          class: image_class,
+          loading: lazy,
+          sizes: sizes,
+          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+        }}
+      {% endif %}
+    </div>
+    <button class="product__media-toggle quick-add-hidden product__media-zoom-{{ section.settings.image_zoom }}{% if is_no_modal_video %} hidden{% endif %}" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
+      <span class="visually-hidden">
+        {{ 'products.product.media.open_media' | t: index: position }}
+      </span>
+    </button>
+  </modal-opener>
+
+  {%- if has_modal -%}
+    {%- if media.media_type == 'model' -%}
+      <product-model class="deferred-media media media--transparent no-js-hidden" data-media-id="{{ media.id }}">
+    {%- else -%}
+      <deferred-media class="deferred-media media media--transparent no-js-hidden" data-media-id="{{ media.id }}">
+    {%- endif -%}
+    <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
+      <span class="deferred-media__poster-button motion-reduce">
+        {%- if media.media_type == 'model' -%}
+          <span class="visually-hidden">{{ 'products.product.media.play_model' | t }}</span>
+          {%- render 'icon-3d-model' -%}
+        {%- else -%}
+          <span class="visually-hidden">{{ 'products.product.media.play_video' | t }}</span>
+          {%- render 'icon-play' -%}
+        {%- endif -%}
+      </span>
+      {{ media.preview_image | image_url: width: 1946 | image_tag:
+        loading: lazy,
+        sizes: sizes,
+        widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+      }}
+    </button>
+    <template>
+      {%- liquid
+        case media.media_type
+        when 'external_video'
+          assign video_class = 'js-' | append: media.host
+          if media.host == 'youtube'
+            echo media | external_video_url: autoplay: true, loop: loop, playlist: media.external_id | external_video_tag: class: video_class, loading: "lazy"
+          else
+            echo media | external_video_url: autoplay: true, loop: loop | external_video_tag: class: video_class, loading: "lazy"
+          endif
+        when 'video'
+          echo media | media_tag: image_size: "2048x", autoplay: true, loop: loop, controls: true, preload: "none"
+        when 'model'
+          echo media | media_tag: image_size: "2048x", toggleable: true
+        endcase
+      -%}
+    </template>
+
+    {%- if media.media_type == 'model' -%}
+      </product-model>
+      {%- if xr_button -%}
+        <button
+          class="button button--full-width product__xr-button"
+          type="button"
+          aria-label="{{ 'products.product.xr_button_label' | t }}"
+          data-shopify-xr
+          data-shopify-model3d-id="{{ media.id }}"
+          data-shopify-title="{{ product.title | escape }}"
+          data-shopify-xr-hidden
+          >
+          {% render 'icon-3d-model' %}
+          {{ 'products.product.xr_button' | t }}
+        </button>
+      {%- endif -%}
+    {%- else -%}
+      </deferred-media>
+    {%- endif -%}
+  {%- endif -%}
+</div>
