@@ -137,7 +137,7 @@
             "full_width_classic": false,
             "atc_append": "none",
             "atc_append_heights": "stretch-quantity",
-            "enable_quantity_discounts": false,
+            "enable_quantity_discounts": true,
             "style": "normal",
             "headline": "BUNDLE & SAVE",
             "preselected": "option_1",
