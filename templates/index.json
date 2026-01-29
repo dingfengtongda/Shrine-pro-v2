@@ -140,7 +140,7 @@
             "enable_quantity_discounts": true,
             "style": "normal",
             "headline": "BUNDLE & SAVE",
-            "preselected": "option_1",
+            "preselected": "option_2",
             "update_prices": false,
             "enable_variant_selectors": true,
             "enable_variant_selectors_on_quantity_of_1": false,
