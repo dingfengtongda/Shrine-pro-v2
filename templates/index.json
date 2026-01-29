@@ -65,7 +65,7 @@
         "title_JJ48x7": {
           "type": "title",
           "settings": {
-            "text_size": "h1",
+            "text_size": "h2",
             "title_alignment": "left",
             "uppercase_title": false,
             "margin_top": 0,
