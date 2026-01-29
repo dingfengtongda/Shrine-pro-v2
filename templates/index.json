@@ -164,7 +164,7 @@
             "option_2_label": "Buy [quantity]",
             "option_2_benefit": "",
             "option_2_caption": "You save [amount_saved]",
-            "option_2_percentage_off_text": "0",
+            "option_2_percentage_off_text": "15",
             "option_2_fixed_amount_off": "0",
             "option_2_price_text": "[price]",
             "option_2_compare_price": "compare_price",
