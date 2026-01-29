@@ -101,7 +101,7 @@
         "video_slide_BHLCXa": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/Design sans titre (24).mp4",
+            "video": null,
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -119,7 +119,7 @@
         "video_slide_JxBWkH": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/8e70f9f8e3ce46653bf0d2a9824ad7e7_720w.mp4",
+            "video": null,
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
