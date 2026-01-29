@@ -72,7 +72,7 @@
             "enable_quantity_discounts": true,
             "style": "normal",
             "headline": "BUNDLE & SAVE",
-            "preselected": "option_2",
+            "preselected": "option_1",
             "display_selected_indicator": true,
             "border_radius": 10,
             "border_width": 2,
