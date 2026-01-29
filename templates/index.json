@@ -35,7 +35,7 @@
             "transparent_container_color": "white",
             "text_alignment_mobile": "center",
             "custom_colors_background": "#ffffff",
-            "custom_gradient_background": "linear-gradient(228deg, rgba(21, 209, 252, 1) 21%, rgba(168, 144, 223, 1) 22%, rgba(63, 122, 185, 0.79) 22%, rgba(187, 48, 254, 1) 83%)",
+            "custom_gradient_background": "",
             "custom_colors_text": "#ffffff",
             "custom_colors_solid_button_background": "#dd1d1d",
             "custom_colors_solid_button_text": "#ffffff",
