@@ -14,43 +14,29 @@
     "2c2ec774-3430-481f-b927-e9c035b9d24e": {
       "type": "horizontal-ticker",
       "blocks": {
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0": {
-          "type": "text",
-          "settings": {
-            "title": "WELCOME!"
-          }
-        },
         "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1": {
           "type": "text",
           "settings": {
-            "title": "SITEWIDE SALE"
-          }
-        },
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-2": {
-          "type": "text",
-          "settings": {
-            "title": "USE CODE X FOR X% OFF!"
+            "title": "BE A PRETTY GIRL!"
           }
         }
       },
       "block_order": [
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0",
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1",
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-2"
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1"
       ],
       "settings": {
         "visibility": "always-display",
-        "speed": 3,
-        "direction": "normal",
+        "speed": 1.5,
+        "direction": "reverse",
         "stop_on_hover": false,
-        "mobile_spacing": 60,
+        "mobile_spacing": 64,
         "desktop_spacing": 100,
         "color_scheme": "custom",
-        "mobile_text_size": 16,
+        "mobile_text_size": 15,
         "desktop_text_size": 18,
         "italic_text": false,
         "uppercase_text": false,
-        "bold_text": false,
+        "bold_text": true,
         "mobile_image_height": 26,
         "desktop_image_height": 40,
         "mobile_reviews_width": 300,
@@ -62,9 +48,9 @@
         "mobile_padding_bottom": 12,
         "desktop_padding_top": 16,
         "desktop_padding_bottom": 16,
-        "custom_colors_background": "#2e2a39",
+        "custom_colors_background": "#a890df",
         "custom_gradient_background": "",
-        "custom_colors_text": "#ffffff"
+        "custom_colors_text": "#eeff69"
       }
     },
     "header": {

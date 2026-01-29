@@ -101,7 +101,6 @@
         "video_slide_BHLCXa": {
           "type": "video_slide",
           "settings": {
-            "video": null,
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -119,7 +118,6 @@
         "video_slide_JxBWkH": {
           "type": "video_slide",
           "settings": {
-            "video": null,
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
