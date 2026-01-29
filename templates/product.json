@@ -233,13 +233,6 @@
             "mobile_transparent_bg": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "margin_top": 24,
-            "margin_bottom": 24
-          }
-        },
         "reviews_8UgFbe": {
           "type": "reviews",
           "settings": {
@@ -328,7 +321,6 @@
         "buy_buttons",
         "e0a0b690-50df-4ca4-acfd-ce2980696cce",
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
-        "description",
         "reviews_8UgFbe",
         "collapsible_tab_tpFUqL",
         "collapsible_tab_99DNzR",
@@ -353,7 +345,7 @@
         "video_timeline": false,
         "play_btn_color_scheme": "accent-1",
         "sound_btn_color_scheme": "inverse",
-        "timeline_color": "accent-1",
+        "timeline_color": "accent-2",
         "media_size": "medium",
         "media_position": "left",
         "gallery_layout": "thumbnail_slider",
