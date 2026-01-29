@@ -160,7 +160,7 @@
             "option_1_compare_price": "compare_price",
             "option_1_compare_price_text": "[compare_price]",
             "option_2_quantity": 2,
-            "option_2_badge": "",
+            "option_2_badge": "Save 15%",
             "option_2_label": "Buy [quantity]",
             "option_2_benefit": "",
             "option_2_caption": "You save [amount_saved]",
