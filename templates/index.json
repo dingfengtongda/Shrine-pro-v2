@@ -162,7 +162,7 @@
             "option_2_quantity": 2,
             "option_2_badge": "SAVE 15%",
             "option_2_label": "Buy [quantity]",
-            "option_2_benefit": "",
+            "option_2_benefit": "15",
             "option_2_caption": "You save [amount_saved]",
             "option_2_percentage_off_text": "15",
             "option_2_fixed_amount_off": "0",
