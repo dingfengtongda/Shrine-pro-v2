@@ -313,7 +313,7 @@
         "desktop_media_width": 40,
         "layout": "image_first",
         "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
+        "desktop_content_alignment": "center",
         "mobile_full_media_width": true,
         "mobile_direction": "normal",
         "mobile_image_quanlity": "2",
