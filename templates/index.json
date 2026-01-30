@@ -284,6 +284,54 @@
         "padding_bottom": 36
       }
     },
+    "image_with_text_FRB4fV": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_HPVRne": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>🐾Natural Black—a must-have for beginners, effortlessly creating a natural, versatile eye look.</h2><h2>🐾Mocha Brown—flatters all skin tones, achieving that effortlessly natural look.</h2><h2>🐾1 PC Long-Lasting Curling Lengthening Fix Mascara, Smudge-Proof Waterproof Mascara Base Holds All Day Long</h2>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_HPVRne"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify://shop_images/3.png",
+        "video_autoplay": true,
+        "video_loop": true,
+        "height": "adapt",
+        "color_scheme": "custom",
+        "section_color_scheme": "custom",
+        "full_desktop_width": true,
+        "content_layout": "no-overlap",
+        "desktop_media_width": 40,
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_full_media_width": true,
+        "mobile_direction": "normal",
+        "mobile_image_quanlity": "2",
+        "mobile_content_alignment": "left",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 32,
+        "desktop_padding_top": 12,
+        "desktop_padding_bottom": 12,
+        "custom_colors_background": "#f4f1fd",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#121212",
+        "custom_colors_solid_button_background": "#dd1d1d",
+        "custom_colors_solid_button_text": "#dd1d1d",
+        "custom_colors_outline_button": "#dd1d1d",
+        "custom_section_colors_background": "#f4f1fd",
+        "custom_section_gradient_background": ""
+      }
+    },
     "featured_collection_8A6A7a": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -342,54 +390,6 @@
         "custom_colors_text": "#2e2a39",
         "custom_colors_solid_button_background": "#dd1d1d",
         "custom_colors_solid_button_text": "#ffffff"
-      }
-    },
-    "image_with_text_FRB4fV": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_HPVRne": {
-          "type": "text",
-          "settings": {
-            "text": "<h2>🐾Natural Black—a must-have for beginners, effortlessly creating a natural, versatile eye look.</h2><h2>🐾Mocha Brown—flatters all skin tones, achieving that effortlessly natural look.</h2><h2>🐾1 PC Long-Lasting Curling Lengthening Fix Mascara, Smudge-Proof Waterproof Mascara Base Holds All Day Long</h2>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "text_HPVRne"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "image": "shopify://shop_images/3.png",
-        "video_autoplay": true,
-        "video_loop": true,
-        "height": "adapt",
-        "color_scheme": "background-1",
-        "section_color_scheme": "background-1",
-        "full_desktop_width": false,
-        "content_layout": "no-overlap",
-        "desktop_media_width": 50,
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_full_media_width": true,
-        "mobile_direction": "normal",
-        "mobile_image_quanlity": "2",
-        "mobile_content_alignment": "left",
-        "mobile_padding_top": 0,
-        "mobile_padding_bottom": 16,
-        "desktop_padding_top": 36,
-        "desktop_padding_bottom": 36,
-        "custom_colors_background": "#2e2a39",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#a890df",
-        "custom_colors_solid_button_background": "#dd1d1d",
-        "custom_colors_solid_button_text": "#dd1d1d",
-        "custom_colors_outline_button": "#dd1d1d",
-        "custom_section_colors_background": "#a890df",
-        "custom_section_gradient_background": ""
       }
     },
     "image_slider_cybNK6": {

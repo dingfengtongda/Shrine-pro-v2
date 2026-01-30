@@ -65,6 +65,7 @@
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
+    "pickers_color_scheme": "background-1",
     "pickers_border_color": "accent-1",
     "pickers_text_color": "text",
     "pickers_overlay_color": "accent-1",
