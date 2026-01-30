@@ -346,10 +346,23 @@
     },
     "image_with_text_FRB4fV": {
       "type": "image-with-text",
+      "blocks": {
+        "text_HPVRne": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>1 PC Long-Lasting Curling Lengthening Fix Mascara, Smudge-Proof Waterproof Mascara Base Holds All Day Long </h1>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_HPVRne"
+      ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "display_id": false,
         "visibility": "always-display",
+        "image": "shopify://shop_images/2.png",
         "video_autoplay": true,
         "video_loop": true,
         "height": "adapt",
