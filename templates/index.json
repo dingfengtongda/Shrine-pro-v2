@@ -141,7 +141,7 @@
             "style": "normal",
             "headline": "BUNDLE & SAVE",
             "preselected": "option_2",
-            "update_prices": false,
+            "update_prices": true,
             "enable_variant_selectors": true,
             "enable_variant_selectors_on_quantity_of_1": false,
             "hide_pickers_overlay": true,
