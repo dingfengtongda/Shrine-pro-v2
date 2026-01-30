@@ -350,7 +350,7 @@
         "text_HPVRne": {
           "type": "text",
           "settings": {
-            "text": "<h2>Natural Black—a must-have for beginners, effortlessly creating a natural, versatile eye look.</h2><h2>Mocha Brown—flatters all skin tones, achieving that effortlessly natural look.</h2><h2>1 PC Long-Lasting Curling Lengthening Fix Mascara, Smudge-Proof Waterproof Mascara Base Holds All Day Long</h2>",
+            "text": "<h2>🐾Natural Black—a must-have for beginners, effortlessly creating a natural, versatile eye look.</h2><h2>🐾Mocha Brown—flatters all skin tones, achieving that effortlessly natural look.</h2><h2>🐾1 PC Long-Lasting Curling Lengthening Fix Mascara, Smudge-Proof Waterproof Mascara Base Holds All Day Long</h2>",
             "text_style": "body"
           }
         }
@@ -384,7 +384,7 @@
         "desktop_padding_bottom": 36,
         "custom_colors_background": "#2e2a39",
         "custom_gradient_background": "",
-        "custom_colors_text": "#ffffff",
+        "custom_colors_text": "#ff0000",
         "custom_colors_solid_button_background": "#dd1d1d",
         "custom_colors_solid_button_text": "#ffffff",
         "custom_colors_outline_button": "#dd1d1d",
