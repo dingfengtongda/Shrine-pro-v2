@@ -143,7 +143,7 @@
             "preselected": "option_2",
             "update_prices": false,
             "enable_variant_selectors": true,
-            "enable_variant_selectors_on_quantity_of_1": true,
+            "enable_variant_selectors_on_quantity_of_1": false,
             "hide_pickers_overlay": true,
             "pickers_label": "",
             "image_width": 70,
