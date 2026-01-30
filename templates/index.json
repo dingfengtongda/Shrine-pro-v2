@@ -418,7 +418,7 @@
         "desktop_spacing": 28,
         "desktop_side_padding": 0,
         "desktop_padding_calc": true,
-        "desktop_adaptive_height": false,
+        "desktop_adaptive_height": true,
         "desktop_dots_position": "under",
         "desktop_arrows_position": "sides",
         "mobile_full_page": false,
