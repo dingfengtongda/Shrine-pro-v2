@@ -384,11 +384,11 @@
         "desktop_padding_bottom": 36,
         "custom_colors_background": "#2e2a39",
         "custom_gradient_background": "",
-        "custom_colors_text": "#ff0000",
+        "custom_colors_text": "#a890df",
         "custom_colors_solid_button_background": "#dd1d1d",
-        "custom_colors_solid_button_text": "#ffffff",
+        "custom_colors_solid_button_text": "#dd1d1d",
         "custom_colors_outline_button": "#dd1d1d",
-        "custom_section_colors_background": "#ffffff",
+        "custom_section_colors_background": "#a890df",
         "custom_section_gradient_background": ""
       }
     },
@@ -729,8 +729,8 @@
   "order": [
     "cfca4268-6358-426c-98ab-d292aeef11e5",
     "featured_product_MPnBGq",
-    "featured_collection_8A6A7a",
     "image_with_text_FRB4fV",
+    "featured_collection_8A6A7a",
     "image_slider_cybNK6",
     "collapsible_content_JxaNyQ",
     "6aa09428-a417-429d-9159-a4e8afd49590",
