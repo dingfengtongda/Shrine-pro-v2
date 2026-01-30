@@ -338,7 +338,7 @@
         "video_slide_qNMTnt": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/6028c608261179cdae8925db0fb18cb1.mp4",
+            "video": "shopify://files/videos/c1741e5f8d90a3da3902c9afdf0ab99c.mp4",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -399,7 +399,7 @@
       "settings": {
         "display_id": false,
         "visibility": "always-display",
-        "title": "Eyelash Application Results",
+        "title": "0",
         "title_highlight_color": "#2e2a39",
         "heading_size": "h0",
         "color_scheme": "background-1",
