@@ -335,10 +335,10 @@
     "image_slider_cybNK6": {
       "type": "image-slider",
       "blocks": {
-        "video_slide_BHLCXa": {
+        "video_slide_qNMTnt": {
           "type": "video_slide",
           "settings": {
-            "thumbnail": "shopify://shop_images/2.png",
+            "video": "shopify://files/videos/6028c608261179cdae8925db0fb18cb1.mp4",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -353,10 +353,28 @@
             "desc_color_scheme": "background-2"
           }
         },
-        "video_slide_JxBWkH": {
+        "video_slide_eqqic8": {
           "type": "video_slide",
           "settings": {
-            "thumbnail": "shopify://shop_images/1.png",
+            "video": "shopify://files/videos/efdf3977cba2d5ff84a262bec1510998.mp4",
+            "loop": true,
+            "muted_autoplay": true,
+            "display_play_btn": true,
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "display_sound_btn": false,
+            "sound_btn_color_scheme": "inverse",
+            "display_timeline": false,
+            "timeline_color": "accent-1",
+            "description": "",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2"
+          }
+        },
+        "video_slide_d3YNht": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify://files/videos/4796a789f81c817f093b4f9d3ae84f18.mp4",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -373,16 +391,17 @@
         }
       },
       "block_order": [
-        "video_slide_BHLCXa",
-        "video_slide_JxBWkH"
+        "video_slide_qNMTnt",
+        "video_slide_eqqic8",
+        "video_slide_d3YNht"
       ],
       "name": "Image/Video Slider",
       "settings": {
         "display_id": false,
         "visibility": "always-display",
-        "title": "<strong>La housse parfaite pour votre ordinateur</strong>",
+        "title": "Eyelash Application Results",
         "title_highlight_color": "#2e2a39",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "color_scheme": "background-1",
         "type": "slide",
         "drag": "enabled",
