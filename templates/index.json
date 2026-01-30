@@ -356,6 +356,7 @@
         "video_slide_JxBWkH": {
           "type": "video_slide",
           "settings": {
+            "thumbnail": "shopify://shop_images/1.png",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
