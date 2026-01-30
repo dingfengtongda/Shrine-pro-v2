@@ -309,7 +309,7 @@
         "color_scheme": "custom",
         "section_color_scheme": "custom",
         "full_desktop_width": true,
-        "content_layout": "overlap",
+        "content_layout": "no-overlap",
         "desktop_media_width": 50,
         "layout": "image_first",
         "desktop_content_position": "middle",
