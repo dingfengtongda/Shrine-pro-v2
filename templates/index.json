@@ -329,7 +329,7 @@
         "custom_colors_solid_button_text": "#dd1d1d",
         "custom_colors_outline_button": "#dd1d1d",
         "custom_section_colors_background": "#f4f1fd",
-        "custom_section_gradient_background": ""
+        "custom_section_gradient_background": "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(244, 241, 253, 1) 55%, rgba(255, 255, 255, 1) 100%)"
       }
     },
     "featured_collection_8A6A7a": {
