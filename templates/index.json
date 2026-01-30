@@ -308,7 +308,7 @@
         "height": "adapt",
         "color_scheme": "custom",
         "section_color_scheme": "custom",
-        "full_desktop_width": false,
+        "full_desktop_width": true,
         "content_layout": "no-overlap",
         "desktop_media_width": 40,
         "layout": "image_first",
