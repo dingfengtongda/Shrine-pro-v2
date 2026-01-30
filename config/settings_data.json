@@ -30,7 +30,7 @@
     "heading_scale": 130,
     "heading_letter_spacing": 0.6,
     "type_body_font": "acme_n4",
-    "body_scale": 100,
+    "body_scale": 120,
     "enable_load_animations": true,
     "repeat_section_animations": false,
     "badge_position": "bottom left",
