@@ -350,7 +350,7 @@
         "text_HPVRne": {
           "type": "text",
           "settings": {
-            "text": "<h1>1 PC Long-Lasting Curling Lengthening Fix Mascara, Smudge-Proof Waterproof Mascara Base Holds All Day Long </h1>",
+            "text": "<h3>Natural Black—a must-have for beginners, effortlessly creating a natural, versatile eye look.</h3><h3>Mocha Brown—flatters all skin tones, achieving that effortlessly natural look.</h3><h3>1 PC Long-Lasting Curling Lengthening Fix Mascara, Smudge-Proof Waterproof Mascara Base Holds All Day Long</h3>",
             "text_style": "body"
           }
         }
@@ -362,7 +362,7 @@
       "settings": {
         "display_id": false,
         "visibility": "always-display",
-        "image": "shopify://shop_images/2.png",
+        "image": "shopify://shop_images/3.png",
         "video_autoplay": true,
         "video_loop": true,
         "height": "adapt",
