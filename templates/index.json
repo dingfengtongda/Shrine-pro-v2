@@ -440,43 +440,6 @@
     },
     "collapsible_content_JxaNyQ": {
       "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_d6xpTp": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "About this item",
-            "icon": "check_box",
-            "filled_icon": false,
-            "row_content": "<p>🍭Ingredients and Distributor Labeling in English on the package.The product packaging can be updated frequently, the packaging might be slightly different from the picture.<br/>🍭This mascara comes with a special brush, which is super fine and easily apply the mascara from the roots of the eyelashes, the curling effect lasts up to 12 hrs.<br/>🍭The mascara has oil based texture so it is waterproof, the special cream is not easy to attach skin but it attaches eyelashes perfectly, the mascara will become a film to hold your eyelashes, so you need mascara/ eye makeup remover to take it off.<br/>🍭2 different color for you to choose from.<br/>🍭6g</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_wHFqNr": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Item details",
-            "icon": "check_box",
-            "filled_icon": false,
-            "row_content": "<p>Product Benefits:      Long Lasting<br/>Item Form:                  Cream<br/>Number of Items:       1<br/>Container Type:          Tube<br/>Skin Type:                      All<br/>Package Type Name:Tube<br/>Skin Tone: All</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_g4Jkfj": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Features & Specs",
-            "icon": "check_box",
-            "filled_icon": false,
-            "row_content": "<p><strong>Other Special Features of the Product:</strong>Waterproof<br/><strong>Specialty:</strong>Curl Enhancing, long lasting<br/><strong>Item Form:</strong>Cream<br/><strong>Water Resistance Level:</strong>Waterproof<br/><strong>Product Benefits:</strong>Long Lasting<br/><strong>Skin Tone:</strong>All<br/><strong>Mascara Wand Type:</strong>Cone<br/><strong>Skin Type:</strong>All<br/><strong>Container Type:</strong>Tube</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_d6xpTp",
-        "collapsible_row_wHFqNr",
-        "collapsible_row_g4Jkfj"
-      ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "display_id": false,
@@ -504,96 +467,6 @@
         "custom_contaner_colors_background": "#ffffff",
         "custom_container_gradient_background": "",
         "custom_contaner_colors_text": "#2e2a39"
-      }
-    },
-    "6aa09428-a417-429d-9159-a4e8afd49590": {
-      "type": "icon-bar",
-      "blocks": {
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-1": {
-          "type": "column",
-          "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
-          }
-        },
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-2": {
-          "type": "column",
-          "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
-          }
-        },
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-3": {
-          "type": "column",
-          "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
-          }
-        },
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-4": {
-          "type": "column",
-          "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-1",
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-2",
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-3",
-        "template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-4"
-      ],
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "title": "",
-        "title_highlight_color": "#6d388b",
-        "heading_size": "h1",
-        "text": "",
-        "color_scheme": "background-1",
-        "icon_layout": "vertical",
-        "icon_size": "medium",
-        "icon_color": "accent-1",
-        "cards_color_scheme": "background-1",
-        "type": "slide",
-        "autoplay": false,
-        "autoplay_speed": 1,
-        "arrows_color_scheme": "inverse",
-        "transparent_arrows": true,
-        "dots_color_scheme": "inverse",
-        "desktop_full_page": false,
-        "columns_desktop": 4,
-        "slider_desktop": false,
-        "per_move_desktop": 1,
-        "desktop_spacing": 40,
-        "desktop_side_padding": 0,
-        "desktop_padding_calc": true,
-        "desktop_adaptive_height": false,
-        "desktop_dots_position": "under",
-        "desktop_arrows_position": "hidden",
-        "columns_mobile": "2",
-        "slider_mobile": true,
-        "enable_mobile_preview": false,
-        "mobile_adaptive_height": false,
-        "mobile_dots_position": "hidden",
-        "mobile_arrows_position": "hidden",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "custom_colors_background": "#ffffff",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2e2a39",
-        "custom_cards_colors_background": "#f3f3f3",
-        "custom_cards_gradient_background": "",
-        "custom_cards_colors_text": "#2e2a39"
       }
     },
     "contact_form_WHP8G7": {
@@ -682,7 +555,6 @@
     "image_with_text_FRB4fV",
     "image_slider_cybNK6",
     "collapsible_content_JxaNyQ",
-    "6aa09428-a417-429d-9159-a4e8afd49590",
     "contact_form_WHP8G7"
   ]
 }
