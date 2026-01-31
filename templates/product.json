@@ -16,7 +16,7 @@
           "type": "title",
           "settings": {
             "text_size": "h2",
-            "title_alignment": "left",
+            "title_alignment": "center",
             "uppercase_title": false,
             "margin_top": 0,
             "margin_bottom": 0
