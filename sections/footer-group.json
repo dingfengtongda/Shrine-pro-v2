@@ -47,7 +47,7 @@
         "enable_country_selector": false,
         "enable_language_selector": true,
         "payment_enable": true,
-        "enabled_payment_types": "american_express,apple_pay,discover,google_pay,master,paypal,",
+        "enabled_payment_types": "american_express,apple_pay,discover,google_pay,master,paypal,visa",
         "show_policy": false,
         "branding_text": "Powered by <a href=\"https://shrinetheme.com/\" target=\"_blank\" title=\"Shrine theme\">Shrine</a>",
         "margin_top": 0,
