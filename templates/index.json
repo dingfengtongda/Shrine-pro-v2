@@ -454,7 +454,7 @@
         "collapsible_row_wHFqNr": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Item details",
             "icon": "check_box",
             "filled_icon": false,
             "row_content": "",
