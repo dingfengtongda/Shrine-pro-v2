@@ -457,7 +457,7 @@
             "heading": "Item details",
             "icon": "check_box",
             "filled_icon": false,
-            "row_content": "",
+            "row_content": "<p>Product Benefits:      Long Lasting<br/>Item Form:                  Cream<br/>Number of Items:       1<br/>Container Type:          Tube<br/>Skin Type:                      All<br/>Package Type Name:Tube<br/>Skin Tone: All</p>",
             "page": ""
           }
         },
