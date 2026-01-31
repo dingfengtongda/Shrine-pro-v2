@@ -289,7 +289,7 @@
             "collapse_icon": "carret",
             "display_top_border": true,
             "open": false,
-            "content": "<p><strong>Product Benefits:</strong>      Long Lasting<br/><strong>Item Form:  </strong>                Cream<br/><strong>Number of Items:       </strong>1<br/><strong>Container Type:          </strong>Tube<br/><strong>Skin Type:                      </strong>All</p><p><strong>Package Type Name:</strong>Tube<br/><strong>Skin Tone: </strong>All<br/></p>",
+            "content": "<p></p><p></p><p><br/></p>",
             "page": "",
             "margin_top": 24,
             "margin_bottom": 0
