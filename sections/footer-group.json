@@ -14,6 +14,15 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "1c647602-cc00-4009-a058-976435c8ee9e": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer",
+            "width_desktop": 4,
+            "width_mobile": "1"
+          }
+        },
         "24f208fd-0898-43eb-af23-d74f8420ab37": {
           "type": "email_signup",
           "settings": {
@@ -25,20 +34,11 @@
             "width_desktop": 4,
             "width_mobile": "2"
           }
-        },
-        "1c647602-cc00-4009-a058-976435c8ee9e": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": "footer",
-            "width_desktop": 4,
-            "width_mobile": "1"
-          }
         }
       },
       "block_order": [
-        "24f208fd-0898-43eb-af23-d74f8420ab37",
-        "1c647602-cc00-4009-a058-976435c8ee9e"
+        "1c647602-cc00-4009-a058-976435c8ee9e",
+        "24f208fd-0898-43eb-af23-d74f8420ab37"
       ],
       "settings": {
         "color_scheme": "accent-1",
@@ -47,7 +47,7 @@
         "enable_country_selector": false,
         "enable_language_selector": true,
         "payment_enable": true,
-        "enabled_payment_types": "",
+        "enabled_payment_types": "american_express,apple_pay,discover,google_pay,master,paypal,",
         "show_policy": false,
         "branding_text": "Powered by <a href=\"https://shrinetheme.com/\" target=\"_blank\" title=\"Shrine theme\">Shrine</a>",
         "margin_top": 0,
