@@ -266,14 +266,14 @@
         "collapsible_tab_tpFUqL": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "About this item",
             "heading_size": "medium",
             "icon": "check_box",
             "filled_icon": false,
             "collapse_icon": "carret",
             "display_top_border": true,
             "open": false,
-            "content": "",
+            "content": "<p>🍭Ingredients and Distributor Labeling in English on the package.The product packaging can be updated frequently, the packaging might be slightly different from the picture.<br/>🍭This mascara comes with a special brush, which is super fine and easily apply the mascara from the roots of the eyelashes, the curling effect lasts up to 12 hrs.<br/>🍭The mascara has oil based texture so it is waterproof, the special cream is not easy to attach skin but it attaches eyelashes perfectly, the mascara will become a film to hold your eyelashes, so you need mascara/ eye makeup remover to take it off.<br/>🍭2 different color for you to choose from.<br/>🍭6g</p>",
             "page": "",
             "margin_top": 24,
             "margin_bottom": 0
