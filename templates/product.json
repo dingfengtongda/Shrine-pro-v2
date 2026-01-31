@@ -282,14 +282,14 @@
         "collapsible_tab_99DNzR": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Item details",
             "heading_size": "medium",
             "icon": "check_box",
             "filled_icon": false,
             "collapse_icon": "carret",
             "display_top_border": true,
             "open": false,
-            "content": "",
+            "content": "<p><strong>Product Benefits:</strong>      Long Lasting<br/><strong>Item Form:  </strong>                Cream<br/><strong>Number of Items:       </strong>1<br/><strong>Container Type:          </strong>Tube<br/><strong>Skin Type:                      </strong>All</p>",
             "page": "",
             "margin_top": 24,
             "margin_bottom": 0
