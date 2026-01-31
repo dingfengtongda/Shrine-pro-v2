@@ -26,7 +26,7 @@
       ],
       "settings": {
         "visibility": "always-display",
-        "speed": 1.5,
+        "speed": 1,
         "direction": "reverse",
         "stop_on_hover": false,
         "mobile_spacing": 64,
