@@ -37,15 +37,6 @@
             "margin_bottom": 15
           }
         },
-        "urgency_FxccUU": {
-          "type": "urgency",
-          "settings": {
-            "urgency": "HOT PRODUCT | LOW STOCK",
-            "color_scheme": "accent-1",
-            "margin_top": 0,
-            "margin_bottom": 15
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -315,7 +306,6 @@
       "block_order": [
         "title",
         "trustpilot_stars_U6mwGz",
-        "urgency_FxccUU",
         "price",
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
         "buy_buttons",
