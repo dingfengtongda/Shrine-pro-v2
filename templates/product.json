@@ -79,7 +79,7 @@
             "space_images": true,
             "vertical_images_position": "top",
             "vertical_prices_layout": "vertical",
-            "option_1_quantity": 1,
+            "option_1_quantity": 0,
             "option_1_badge": "",
             "option_1_badge_style": "1",
             "option_1_badge_color": "accent-1",
@@ -122,7 +122,7 @@
             "option_3_price_text": "[price]",
             "option_3_compare_price": "compare_price",
             "option_3_compare_price_text": "[compare_price]",
-            "option_4_quantity": 0,
+            "option_4_quantity": 4,
             "option_4_badge": "",
             "option_4_badge_style": "1",
             "option_4_badge_color": "accent-1",
@@ -404,7 +404,6 @@
         "video_slide_ztQmAC": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/c1741e5f8d90a3da3902c9afdf0ab99c.mp4",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -422,7 +421,6 @@
         "video_slide_dgm6Gk": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/efdf3977cba2d5ff84a262bec1510998.mp4",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -440,7 +438,6 @@
         "video_slide_QkQT49": {
           "type": "video_slide",
           "settings": {
-            "video": "shopify://files/videos/4796a789f81c817f093b4f9d3ae84f18.mp4",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
@@ -466,7 +463,7 @@
         "display_id": false,
         "visibility": "always-display",
         "title": "Eyelash Application Results",
-        "title_highlight_color": "#6D388B",
+        "title_highlight_color": "#6d388b",
         "heading_size": "h2",
         "color_scheme": "background-1",
         "type": "slide",
@@ -499,7 +496,7 @@
         "mobile_arrows_position": "sides",
         "padding_top": 36,
         "padding_bottom": 36,
-        "custom_colors_background": "#FFFFFF",
+        "custom_colors_background": "#ffffff",
         "custom_gradient_background": "",
         "custom_colors_text": "#121212"
       }
@@ -512,7 +509,7 @@
           "settings": {
             "star_color": "#a890df",
             "bg_star_color": "#c8c8c8",
-            "star_symbol_color": "#fff",
+            "star_symbol_color": "#ffffff",
             "stars_rating": 5,
             "title": "Best Mascara Ever!",
             "text": "<p>Nice mascara. Goes on smoothly without clumping. Lasts longer than I expected. Unusual brush shape let me access hard to reach lashes. I'd say it's a worthwhile investment for a great product.</p>",
@@ -524,7 +521,7 @@
           "settings": {
             "star_color": "#a890df",
             "bg_star_color": "#c8c8c8",
-            "star_symbol_color": "#fff",
+            "star_symbol_color": "#ffffff",
             "stars_rating": 5,
             "title": "Better than chocolate!",
             "text": "<p>You have to have this mascara! the mascara is awesome and makes even my eyelashes look great!</p>",
@@ -536,7 +533,7 @@
           "settings": {
             "star_color": "#a890df",
             "bg_star_color": "#c8c8c8",
-            "star_symbol_color": "#fff",
+            "star_symbol_color": "#ffffff",
             "stars_rating": 5,
             "title": "Best mascara EVERRRRRR",
             "text": "<p>I used to just buy whatever mascara I felt like buying and then I tried this a few years ago and now this is the only mascara I buy. I don't even try any other ones that come out new because this one is so amazing and it covers all my lashes and it just makes them look so nice and long and separates and like I like. I don't like clumpy looking crap. </p>",
@@ -557,7 +554,7 @@
         "desktop_content_position": "above",
         "desktop_content_alignment": "center",
         "title": "Trustpilot reviews",
-        "title_highlight_color": "#6D388B",
+        "title_highlight_color": "#6d388b",
         "heading_size": "h1",
         "subtitle": "Excellent [rating] <strong>/ 5</strong> [rating_stars]",
         "subheading_rating_text": "<strong>5</strong>",
@@ -566,7 +563,7 @@
         "subheading_font": "body",
         "star_color": "#a890df",
         "bg_star_color": "#c8c8c8",
-        "star_symbol_color": "#fff",
+        "star_symbol_color": "#ffffff",
         "stars_rating": 5,
         "text": "",
         "cards_border_radius": 16,
@@ -596,12 +593,12 @@
         "mobile_arrows_position": "under",
         "padding_top": 36,
         "padding_bottom": 36,
-        "custom_colors_background": "#FFFFFF",
+        "custom_colors_background": "#ffffff",
         "custom_gradient_background": "",
-        "custom_colors_text": "#2E2A39",
-        "custom_cards_colors_background": "#F3F3F3",
+        "custom_colors_text": "#2e2a39",
+        "custom_cards_colors_background": "#f3f3f3",
         "custom_cards_gradient_background": "",
-        "custom_cards_colors_text": "#2E2A39"
+        "custom_cards_colors_text": "#2e2a39"
       }
     }
   },
