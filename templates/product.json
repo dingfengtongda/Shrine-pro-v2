@@ -301,6 +301,10 @@
             "margin_top": 24,
             "margin_bottom": 0
           }
+        },
+        "judge_me_reviews_preview_badge_qV9P67": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
@@ -314,7 +318,8 @@
         "reviews_8UgFbe",
         "collapsible_tab_tpFUqL",
         "collapsible_tab_99DNzR",
-        "collapsible_tab_H8h69x"
+        "collapsible_tab_H8h69x",
+        "judge_me_reviews_preview_badge_qV9P67"
       ],
       "custom_css": [],
       "settings": {
