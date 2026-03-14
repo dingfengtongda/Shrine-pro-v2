@@ -22,20 +22,9 @@
             "margin_bottom": 0
           }
         },
-        "trustpilot_stars_U6mwGz": {
-          "type": "trustpilot_stars",
-          "settings": {
-            "rating": 5,
-            "star_color": "#a890df",
-            "bg_star_color": "#c8c8c8",
-            "star_symbol_color": "#ffffff",
-            "label": "（3）",
-            "size": 16,
-            "alignment": "flex-start",
-            "scroll_id": "",
-            "margin_top": 15,
-            "margin_bottom": 15
-          }
+        "judge_me_reviews_preview_badge_qV9P67": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -301,15 +290,11 @@
             "margin_top": 24,
             "margin_bottom": 0
           }
-        },
-        "judge_me_reviews_preview_badge_qV9P67": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
         }
       },
       "block_order": [
         "title",
-        "trustpilot_stars_U6mwGz",
+        "judge_me_reviews_preview_badge_qV9P67",
         "price",
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
         "buy_buttons",
@@ -318,8 +303,7 @@
         "reviews_8UgFbe",
         "collapsible_tab_tpFUqL",
         "collapsible_tab_99DNzR",
-        "collapsible_tab_H8h69x",
-        "judge_me_reviews_preview_badge_qV9P67"
+        "collapsible_tab_H8h69x"
       ],
       "custom_css": [],
       "settings": {
