@@ -359,29 +359,11 @@
             "desc_alignment": "center",
             "desc_color_scheme": "background-2"
           }
-        },
-        "video_slide_QkQT49": {
-          "type": "video_slide",
-          "settings": {
-            "loop": true,
-            "muted_autoplay": true,
-            "display_play_btn": true,
-            "btn_animation": false,
-            "btn_color_scheme": "accent-1",
-            "display_sound_btn": false,
-            "sound_btn_color_scheme": "inverse",
-            "display_timeline": false,
-            "timeline_color": "accent-1",
-            "description": "",
-            "desc_alignment": "center",
-            "desc_color_scheme": "background-2"
-          }
         }
       },
       "block_order": [
         "video_slide_ztQmAC",
-        "video_slide_dgm6Gk",
-        "video_slide_QkQT49"
+        "video_slide_dgm6Gk"
       ],
       "name": "Image/Video Slider",
       "settings": {
