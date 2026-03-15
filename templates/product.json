@@ -260,6 +260,13 @@
             "margin_top": 24,
             "margin_bottom": 0
           }
+        },
+        "description_bjeniD": {
+          "type": "description",
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
         }
       },
       "block_order": [
@@ -272,7 +279,8 @@
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
         "collapsible_tab_tpFUqL",
         "collapsible_tab_99DNzR",
-        "collapsible_tab_H8h69x"
+        "collapsible_tab_H8h69x",
+        "description_bjeniD"
       ],
       "custom_css": [],
       "settings": {
