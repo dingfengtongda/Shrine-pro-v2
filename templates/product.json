@@ -346,6 +346,7 @@
         "video_slide_dgm6Gk": {
           "type": "video_slide",
           "settings": {
+            "video": "shopify://files/videos/3月16日.mp4",
             "loop": true,
             "muted_autoplay": true,
             "display_play_btn": true,
