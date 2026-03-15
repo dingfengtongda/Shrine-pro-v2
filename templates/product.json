@@ -228,13 +228,6 @@
             "margin_top": 24,
             "margin_bottom": 0
           }
-        },
-        "description_bjeniD": {
-          "type": "description",
-          "settings": {
-            "margin_top": 24,
-            "margin_bottom": 24
-          }
         }
       },
       "block_order": [
@@ -245,8 +238,7 @@
         "buy_buttons",
         "e0a0b690-50df-4ca4-acfd-ce2980696cce",
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
-        "collapsible_tab_tpFUqL",
-        "description_bjeniD"
+        "collapsible_tab_tpFUqL"
       ],
       "custom_css": [],
       "settings": {
