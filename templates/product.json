@@ -325,6 +325,24 @@
     "image_slider_jATYYC": {
       "type": "image-slider",
       "blocks": {
+        "video_slide_tHRdRq": {
+          "type": "video_slide",
+          "settings": {
+            "video": "shopify://files/videos/3月25日 (3).mp4",
+            "loop": true,
+            "muted_autoplay": true,
+            "display_play_btn": true,
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "display_sound_btn": false,
+            "sound_btn_color_scheme": "inverse",
+            "display_timeline": false,
+            "timeline_color": "accent-1",
+            "description": "",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2"
+          }
+        },
         "video_slide_ztQmAC": {
           "type": "video_slide",
           "settings": {
@@ -363,6 +381,7 @@
         }
       },
       "block_order": [
+        "video_slide_tHRdRq",
         "video_slide_ztQmAC",
         "video_slide_dgm6Gk"
       ],
