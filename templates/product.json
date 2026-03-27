@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "description_8XQyg7": {
+          "type": "description",
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -231,6 +238,7 @@
         }
       },
       "block_order": [
+        "description_8XQyg7",
         "title",
         "judge_me_reviews_preview_badge_qV9P67",
         "price",
