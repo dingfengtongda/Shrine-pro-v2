@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "description_8XQyg7": {
-          "type": "description",
-          "settings": {
-            "margin_top": 24,
-            "margin_bottom": 24
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -222,6 +215,7 @@
         },
         "collapsible_tab_tpFUqL": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "What Are The Shipping Times?",
             "heading_size": "medium",
@@ -235,10 +229,16 @@
             "margin_top": 24,
             "margin_bottom": 0
           }
+        },
+        "description_8XQyg7": {
+          "type": "description",
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
         }
       },
       "block_order": [
-        "description_8XQyg7",
         "title",
         "judge_me_reviews_preview_badge_qV9P67",
         "price",
@@ -246,7 +246,8 @@
         "buy_buttons",
         "e0a0b690-50df-4ca4-acfd-ce2980696cce",
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
-        "collapsible_tab_tpFUqL"
+        "collapsible_tab_tpFUqL",
+        "description_8XQyg7"
       ],
       "custom_css": [],
       "settings": {
